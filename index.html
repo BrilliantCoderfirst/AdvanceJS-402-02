@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdvanceJS-401-02</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100;
+            height: 936px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        h1 {
+            color: green;
+            font-size: 40px;
+        }
+        p {
+            padding: 30px 0px;
+            font-weight: 600;
+            color: black;
+        }
+        button {
+            width: 100px;
+            height: 30px;
+        }
+        .forImage {
+            width: 400px
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <h1>Geekster</h1>
+        <p>Click on the button to add image element</p>
+        <button onclick="addImage()">Click On</button>
+    </div>
+
+
+    <script>
+        
+        function addImage() {
+            const h2 = document.createElement('h2');
+            const text = document.createTextNode('Image Element Added.');
+            h2.style.color = 'green';
+            h2.style.padding = '20px'
+            h2.appendChild(text);
+
+            const img = document.createElement('img');
+            img.setAttribute('src', 'img/geekster.png');
+            img.classList.add('forImage');
+
+            const container = document.getElementById('container');
+            container.appendChild(h2);
+            container.appendChild(img);
+        }
+
+    </script>
+</body>
+
+</html>
